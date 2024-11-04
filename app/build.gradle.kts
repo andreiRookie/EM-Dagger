@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":feature_home"))
 
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)

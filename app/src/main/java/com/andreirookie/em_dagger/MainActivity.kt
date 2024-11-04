@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.andreirookie.core.AppDependenciesFacadeProvider
 import com.andreirookie.em_dagger.di.ActivityComponent
+import com.andreirookie.feature_home.presentation.FragmentHome
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,5 +20,9 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, FragmentHome.create())
+            .commit()
     }
 }
